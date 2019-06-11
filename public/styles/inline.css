@@ -76,11 +76,11 @@ body {
 }
 
 .header #butRefresh {
-  background: url(./Images/refresh.svg) center center no-repeat;
+  background: url(../Images/refresh.svg) center center no-repeat;
 }
 
 .header #butInstall {
-  background: url(./Images/install.svg) center center no-repeat;
+  background: url(../Images/install.svg) center center no-repeat;
 }
 
 .header .powered-by {
