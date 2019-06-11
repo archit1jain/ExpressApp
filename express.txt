@@ -3,5 +3,8 @@ npm install express -> install express
 npm install -D nodemon
 edit the package file.
 npm i moment.
-npm run -dev
+npm run dev
 npm install -uuid -> so that we can get a random id;
+
+npm install express-handlebars
+

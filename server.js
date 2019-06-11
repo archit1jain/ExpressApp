@@ -3,9 +3,13 @@ const path = require('path');
 const exphbs = require('express-handlebars');
 const members = require('./Members.js')
 const logger = require('./middleware/logger')
+const redirectToHTTPS = require('express-http-to-https').redirectToHTTPS;
 const app = express();
+app.use(redirectToHTTPS([/localhost:(\d{4})/], [], 301));
 
 
+//set a static folder
+app.use(express.static(path.join(__dirname,'public')));
 //handlebars middlewares
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
@@ -61,8 +65,6 @@ app.use(express.json());
 app.use(express.urlencoded({extended : false}));
 
 
-//set a static folder
-app.use(express.static(path.join(__dirname,'public')));
 // 
 app.use('/api/members',require('./routes/api/members'));
 
